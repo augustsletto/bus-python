@@ -40,19 +40,127 @@ class Bus:
                         break
                     except ValueError:
                         print("Incorrect input. Please input a number.")
-                    self.poke(position)
-                elif choice == "9":
-                    while True:
-                        try:
-                            position = int(input("From which seat number would you like to remove the person and remove from the bus?: "))
-                            break
-                        except ValueError:
-                            print("Incorrect input. Please input a number.")
+                self.poke(position)
+            elif choice == "9":
+                while True:
+                    try:
+                        position = int(input("From which seat number would you like to remove the person and remove from the bus?: "))
+                        break
+                    except ValueError:
+                        print("Incorrect input. Please input a number.")
                     
-                    self.getting_off(position)
-                elif choice == "10":
-                    print("Program will now exit")
+                self.getting_off(position)
+            elif choice == "10":
+                print("Program will now exit")
+                break
+            else:
+                print("Incorrect input. Try again")
+
+    def add_passenger(self):
+        if self.number_of_passengers < 25:
+            while True:
+                try:
+                    age = int(input("Input passengers age: "))
+
+                    if age >= 0:
+                        break
+                    else:
+                        print("The age has to be a positive number.")
+                except ValueError:
+                    print("Incorrect input. Please input a number that represents your age")
+
+            while True:
+                gender = input("Please input the passengers gender (m/f): ").lower()
+
+                if gender == "m" or gender == "f":
                     break
                 else:
-                    print("Incorrect input. Try again")
-                    
+                    print("Incorrect input. Please input either 'm' or 'f'.")
+            self.passengers.append({"age": age, "gender": gender})
+            self.number_of_passengers += 1
+            print("Passenger added.")
+        else:
+            print("Bus is full. Cannot add more passengers, take the next one!")
+
+    def print_bus(self):
+        print("\nPassengers in the bus: ")
+        for i, passengers in enumerate(self.passengers):
+            print(f"Seat {i + 1}: Age {passengers['age']}, Gender {passengers['gender']}")
+
+    def calc_total_age(self):
+        calc_total_age = sum(passengers["age"] for passengers in self.passengers)
+        print(f"\nTotal age of all passengers: {calc_total_age}")
+
+    
+    def calc_average_age(self):
+        if not self.passengers:
+            print("\nNo passengers on the bus.")
+            return
+        
+        total_age = sum(passengers["age"] for passengers in self.passengers)
+        average_age = total_age / len(self.passengers)
+        print(f"\nAverage age on the bus: {average_age}.")
+
+    
+    def max_age(self):
+        if not self.passengers:
+            print("\nNo passengers on the bus. ")
+            return
+
+        max_passenger = max(self.passengers, key=lambda x: x["age"])
+        print(f"\nOldest passengers age: Age {max_passenger['age']}, Gender {max_passenger['gender']}")
+
+    def find_age(self, min_age, max_age):
+        matching_passengers = [passengers for passengers in self.passengers if min_age <= passengers["age"] <= max_age]
+        if matching_passengers:
+            print(f"\nPassengers with age between {min_age} and {max_age}:")
+            for i, passengers in enumerate(matching_passengers):
+                print(f"\Seat {i + 1}: Age {passengers['age']}, Gender {passengers['gender']}")
+        else:
+            print(f"\nNo passengers between the age of {min_age} and {max_age} found on the bus.")
+    
+    def sort_bus(self):
+        self.passengers.sort(key=lambda x: x["age"], reverse=True)
+    
+    def print_sex(self):
+        male_passengers = [passengers for passengers in self.passengers if passengers['gender'] == 'm']
+        female_passengers = [passengers for passengers in self.passengers if passengers['gender'] == 'f']
+    
+        print("\nMale Passengers: ")
+        for i, passengers in enumerate(male_passengers):
+            print(f"Seat {i + 1}: Age {passengers['age']}")
+
+        print("\nFemale Passengers: ")
+        for i, passengers in enumerate(female_passengers):
+            print(f"Seat {i + 1}: Age {passengers['age']}")
+
+    
+    def poke(self, position):
+        if 1 <= position < len(self.passengers) + 1:
+            passenger = self.passengers[position - 1]
+            if passenger ['gender'] == 'm':
+                print(f"You are poking a male passenger with the age {passenger['age']}.")
+            else:
+                print(f"You are poking a female passenger with the age {passenger['age']}.")
+            print("The person has been poked.")
+        else:
+            print("Empty seat, try again!")
+
+    def getting_off(self, position):
+        if 1 <= position < len(self.passengers) + 1:
+            self.passengers.pop(position - 1)
+            self.number_of_passengers -= 1
+            print(f"Passengers on seat {position} has left the bus.")
+        else:
+            print("Empty seat. try again!")
+
+class Program:
+    def __init__(self):
+        self.mybus = Bus()
+
+    def run(self):
+        self.mybus.run()
+
+if __name__ == "__main__":
+    my_program = Program()
+    my_program.run()
