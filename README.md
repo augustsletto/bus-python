@@ -2,6 +2,8 @@
 
 This Python-based command-line program simulates a bus management system. The program allows users to manage passengers on a bus by performing various actions.
 
+![Exit](images/amiresponsive.jpg)
+
 ## Usage
 
 - **Add Passengers:** Add passengers to the bus by entering their age and gender.
@@ -30,12 +32,14 @@ The Bus Management System underwent testing to ensure functionality and responsi
 ### Tools Used
 
 - **Manual Testing**: Conducted various manual tests to assess user interactions and functionality.
-- **Code Institute Python Linter**: Utilized CI Python Linter automated testing.
+- **Code Institute Python Linter**: Utilized CI Python PEP8 Linter automated testing.
 - **Systematic Testing**: Employed systematic methods to ensure comprehensive coverage of all functionalities.
 
 ### Test Results
 
 The project passed all test cases, showcasing consistent performance and accurate functionality across various scenarios.
+
+
 
 ## Deployment
 
