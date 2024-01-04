@@ -47,3 +47,24 @@ The deployed Bus Management System code can be accessed via the following link: 
 
 Include relevant screenshots showcasing the command-line interface and functionalities of the Bus Management System.
 
+
+![Menu](images/Menu.jpg)
+
+![Passenger added](images/Passenger_added.jpg)
+
+![On the bus](images/on_the_bus.jpg)
+
+![Total age](images/total_age.jpg)
+
+![Average age](images/average_age.jpg)
+
+![Sort by age](images/sort.jpg)
+
+![Sort by gender](images/sort_gender.jpg)
+
+![Poke](images/poke.jpg)
+
+![Remove](images/remove.jpg)
+
+![Exit](images/exit.jpg)
+
