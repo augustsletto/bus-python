@@ -96,7 +96,7 @@ class Bus:
         for i, passengers in enumerate(self.passengers):
             print(
                 f"Seat {i + 1}: Age {passengers['age']}, "
-                "Gender {passengers['gender']}")
+                f"Gender {passengers['gender']}")
 
     def calc_total_age(self):
         calc_total_age = sum(
@@ -120,7 +120,7 @@ class Bus:
         max_passenger = max(self.passengers, key=lambda x: x["age"])
         print(
             f"\nOldest passengers age: Age {max_passenger['age']}, "
-            "Gender {max_passenger['gender']}")
+            f"Gender {max_passenger['gender']}")
 
     def find_age(self, min_age, max_age):
         matching_passengers = [
@@ -131,11 +131,11 @@ class Bus:
             for i, passengers in enumerate(matching_passengers):
                 print(
                     f"\nSeat {i + 1}: Age {passengers['age']}, "
-                    "Gender {passengers['gender']}")
+                    f"Gender {passengers['gender']}")
         else:
             print(
                 f"\nNo passengers between the age of {min_age} "
-                "and {max_age} found on the bus.")
+                f"and {max_age} found on the bus.")
 
     def sort_bus(self):
         self.passengers.sort(key=lambda x: x["age"], reverse=True)
@@ -161,12 +161,12 @@ class Bus:
             passenger = self.passengers[position - 1]
             if passenger['gender'] == 'm':
                 print(
-                    f"You are poking a male passenger with "
-                    "the age {passenger['age']}.")
+                    f"You are poking a male passenger "
+                    f"with the age {passenger['age']}.")
             else:
                 print(
-                    f"You are poking a female passenger with"
-                    " the age {passenger['age']}.")
+                    f"You are poking a female passenger "
+                    f"with the age {passenger['age']}.")
             print("The person has been poked.")
         else:
             print("Empty seat, try again!")

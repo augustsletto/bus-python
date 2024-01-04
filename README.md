@@ -39,14 +39,11 @@ The project passed all test cases, showcasing consistent performance and accurat
 
 ## Deployment
 
-The Bus Management System was developed locally and deployed using [Heroku](https://your-heroku-app-link.com).
+The Bus Management System was developed locally and deployed using Heroku. Follow the link to test the [Bus Management System](https://bus-python-39d4b2ee8d3d.herokuapp.com/).
 
-The deployed Bus Management System can be accessed via the following link: [Bus Management System](https://yourusername.github.io/bus-management-system)
+The deployed Bus Management System code can be accessed via the following link: [GitHub](https://github.com/augustsletto/bus-python)
 
 ## Screenshots
 
 Include relevant screenshots showcasing the command-line interface and functionalities of the Bus Management System.
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
