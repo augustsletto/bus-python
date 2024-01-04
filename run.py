@@ -1,10 +1,16 @@
 class Bus:
+    """
+    Bus class to manage passengers and perform bus-related operations.
+    """
     def __init__(self):
-        self.passengers = []
-        self.number_of_passengers = 0
+        """Initialize the Bus object."""
+        self.passengers = []  # List to store passenger details
+        self.number_of_passengers = 0  # Initialize the count of passengers
 
     def run(self):
+        """Run the bus management system."""
         while True:
+            # Display available actions
             print("\n1. Add passengers")
             print("2. Who is on the bus right now?")
             print("3. Calculate total age of passengers")
@@ -17,6 +23,7 @@ class Bus:
             print("10. Exit the program")
 
             choice = input("\nChoose an action: ")
+            # Perform actions based on user's choice
 
             if choice == "1":
                 self.add_passenger()
@@ -62,8 +69,10 @@ class Bus:
                 print("Incorrect input. Try again")
 
     def add_passenger(self):
-        if self.number_of_passengers < 25:
+        """Add a new passenger to the bus."""
+        if self.number_of_passengers < 25:  # Check if the bus is not full
             while True:
+                """ Input passenger details: age and gender"""
                 try:
                     age = int(input("Input passengers age: "))
 
@@ -92,6 +101,7 @@ class Bus:
                 "Bus is full. Cannot add more passengers, take the next one!")
 
     def print_bus(self):
+        """Prints the bus and it's passengers"""
         print("\nPassengers in the bus: ")
         for i, passengers in enumerate(self.passengers):
             print(
@@ -99,6 +109,7 @@ class Bus:
                 f"Gender {passengers['gender']}")
 
     def calc_total_age(self):
+        """Calculates total age of passengers"""
         calc_total_age = sum(
             passengers["age"]for passengers in self.passengers)
         print(f"\nTotal age of all passengers: {calc_total_age}")
@@ -181,13 +192,19 @@ class Bus:
 
 
 class Program:
+    """
+    Program class to initialize and run the bus management system.
+    """
     def __init__(self):
+        """Initialize the Program object."""
         self.mybus = Bus()
 
     def run(self):
+        """Run the program."""
         self.mybus.run()
 
 
 if __name__ == "__main__":
+    """Create an instance of Program class and run the program"""
     my_program = Program()
     my_program.run()
