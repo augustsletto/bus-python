@@ -1,32 +1,52 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Bus Management System
 
-Welcome,
+This Python-based command-line program simulates a bus management system. The program allows users to manage passengers on a bus by performing various actions.
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **March 14, 2023**
+## Usage
 
-## Reminders
+- **Add Passengers:** Add passengers to the bus by entering their age and gender.
+- **View Passenger List:** Display the list of passengers currently on the bus.
+- **Calculate Total Age:** Calculate the total age of all passengers on the bus.
+- **Calculate Average Age:** Calculate the average age of passengers on the bus.
+- **Find Oldest Passenger:** Identify the oldest passenger on the bus.
+- **Filter Passengers by Age:** Find passengers within a specific age range.
+- **Sort Passengers:** Sort the list of passengers by age in descending order.
+- **View Gender Count:** Display the count of passengers based on gender.
+- **Poke and Remove Passengers:** Interactively poke or remove passengers from their seat.
 
-- Your code must be placed in the `run.py` file
-- Your dependencies must be placed in the `requirements.txt` file
-- Do not edit any of the other files or your code may not deploy properly
+## Testing
 
-## Creating the Heroku app
+### Overview
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+The Bus Management System underwent testing to ensure functionality and responsiveness across different user interactions.
 
-1. `heroku/python`
-2. `heroku/nodejs`
+### Test Cases
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+- **Functionality**: Verified all features (adding passengers, data calculations, sorting, and removing passengers) for accuracy and expected behavior.
+- **Interface Testing**: Ensured a user-friendly interface and ease of use during passenger management operations.
+- **Input Validation**: Checked for appropriate handling of user inputs, including age and gender entries.
+- **Compatibility Testing**: Confirmed compatibility across different environments and systems.
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+### Tools Used
 
-Connect your GitHub repository and deploy as normal.
+- **Manual Testing**: Conducted various manual tests to assess user interactions and functionality.
+- **Code Institute Python Linter**: Utilized CI Python Linter automated testing.
+- **Systematic Testing**: Employed systematic methods to ensure comprehensive coverage of all functionalities.
 
-## Constraints
+### Test Results
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+The project passed all test cases, showcasing consistent performance and accurate functionality across various scenarios.
 
----
+## Deployment
 
-Happy coding!
+The Bus Management System was developed locally and deployed using [Heroku](https://your-heroku-app-link.com).
+
+The deployed Bus Management System can be accessed via the following link: [Bus Management System](https://yourusername.github.io/bus-management-system)
+
+## Screenshots
+
+Include relevant screenshots showcasing the command-line interface and functionalities of the Bus Management System.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
