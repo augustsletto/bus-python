@@ -5,6 +5,20 @@ This Python-based command-line program simulates a bus management system. The pr
 ![Exit](images/amiresponsive.jpg)
 
 
+## Table of Contents
+- [Usage](#usage)
+- [Objectives of the Project](#objectives-of-the-project)
+- [User Stories](#user-stories)
+- [Testing](#testing)
+  - [Overview](#overview)
+  - [Test Cases](#test-cases)
+  - [Testing Write-Ups](#testing-write-ups)
+  - [Tools Used](#tools-used)
+  - [Test Results](#test-results)
+  - [Bugs Occurred During Development](#bugs-occurred-during-development)
+- [Deployment](#deployment)
+- [Libraries Used and Rationale](#libraries-used-and-rationale)
+- [Screenshots](#screenshots)
 
 ## Usage
 
@@ -101,13 +115,21 @@ First, you need to get a copy of the Bus Management System project. You can do t
 
 Forking (optional): Go to the GitHub page for the project, click the "Fork" button at the top right to create your own copy of the project in your GitHub account.
 Cloning: Clone the project to your local machine. If you've forked the project, replace augustsletto with your GitHub username in the URL.
-```git clone https://github.com/augustsletto/bus-python.git```
-```cd bus-python```
+```
+git clone https://github.com/augustsletto/bus-python.git
+```
+```
+cd bus-python
+```
 - **Step 2: Prepare Your Local Copy**
 After cloning the project, navigate into the project directory. If not already present, create a requirements.txt file listing all dependencies:
-```pip freeze > requirements.txt```
+```
+pip freeze > requirements.txt
+```
 Create a Procfile to tell Heroku how to run your application. Open a text editor and add the following line:
-```worker: python run.py```
+```
+worker: python run.py
+```
 Save this as Procfile in the root directory of your project.
 
 - **Step 3: Initialize Git**
@@ -127,12 +149,18 @@ This command creates a new app on Heroku and adds a remote to your local Git rep
 
 - **Step 5: Deploy the Application**
 Deploy your code to Heroku:
-```git push heroku master```
+```
+git push heroku master
+```
 Or if your main branch is named main, use:
-```git push heroku main```
+```
+git push heroku main
+```
 - **Step 6: Manage Dynos**
 By default, Heroku starts a web dyno. You need to change this since your application uses a worker dyno:
-```heroku ps:scale web=0 worker=1```
+```
+heroku ps:scale web=0 worker=1
+```
 
 - **Deploying from the Heroku Dashboard**
 Open Heroku Dashboard and go to Heroku Dashboard in your web browser and log in with your Heroku credentials.
@@ -147,6 +175,21 @@ Manual Deploy: Scroll down to the "Manual deploy" section. If you’ve connected
 
 Monitor Deployment: Heroku will begin the deployment process. You can monitor the progress directly on the page. It will display build logs and notify you once the deployment is successful.
 
+
+## Libraries Used and Rationale
+
+The Bus Management System utilizes both Python and Node.js environments, integrating technologies for a robust command-line application. Here's the rationale behind the selected libraries and tools:
+
+### Python
+- **Python 3.9.18**: Chosen for its reliability and wide support. Python's extensive standard library allows for efficient development of the core functionalities without external dependencies, making the system lightweight and easy to maintain.
+
+### Node.js
+- **Node.js Libraries**:
+  - **node-static**: Serves static files required by the application. It's lightweight and provides an efficient way to serve files, enhancing the performance.
+  - **node-pty**: Enables the application to run and manage terminal processes. It's crucial for simulating the command-line interface within the web application.
+  - **total4**: A modern framework for Node.js, used for its simplicity and performance in building web applications. It allows for quick development and easy deployment of web services.
+
+These selections provide a balance between performance, ease of use, and functionality, ensuring a seamless user experience in a command-line simulation environment.
 
 
 
